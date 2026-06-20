@@ -7,6 +7,7 @@ import com.practice.p1.Services.StudentClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class StudentClassImpl implements StudentClassService {
@@ -14,8 +15,17 @@ public class StudentClassImpl implements StudentClassService {
     StudentClassRepo stdRepo;
 
     @Override
-    public List<StudentClass> getStudentClassList() {
-        return stdRepo.findAll();
+    public List<StudentClassDTO> getStudentClassList() {
+        List<StudentClass> clsObj = stdRepo.findAll();
+        List<StudentClassDTO> dtoList = new ArrayList<>();
+        for(StudentClass ob: clsObj){
+            StudentClassDTO dt = new    StudentClassDTO();
+            dt.setStdClassNo(ob.getStdClassNo());
+            dt.setStudClassName(ob.getStudClassName());
+            dtoList.add(dt);
+
+        }
+        return dtoList;
     }
 
     @Override

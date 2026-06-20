@@ -6,6 +6,6 @@ import com.practice.p1.Entity.StudentClass;
 import java.util.List;
 
 public interface StudentClassService {
-    List<StudentClass> getStudentClassList();
+    List<StudentClassDTO> getStudentClassList();
     StudentClass saveEntity(StudentClassDTO ob);
 }

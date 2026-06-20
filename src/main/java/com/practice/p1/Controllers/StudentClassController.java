@@ -16,7 +16,7 @@ public class StudentClassController {
     StudentClassService os;
 
     @GetMapping("studclass")
-    List<StudentClass> getAllList(){
+    List<StudentClassDTO> getAllList(){
         return os.getStudentClassList();
     }
 

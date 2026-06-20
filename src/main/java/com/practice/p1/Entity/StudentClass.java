@@ -20,8 +20,8 @@ public class StudentClass {
     String studClassName;
     Long stdClassNo;
     Long year;
-    @OneToOne(mappedBy = "studClass", fetch = FetchType.LAZY)
-    StudentMaster students;
+    @OneToMany(mappedBy = "studClass", fetch = FetchType.LAZY)
+    List<StudentMaster> students;
 
 
 }
