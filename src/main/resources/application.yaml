@@ -4,12 +4,19 @@ spring:
   profiles:
     active: local
 
+app:
+  cors:
+    allowed-origin: http://localhost:8080
+
 springdoc:
   api-docs:
     enabled: true
+    path: /v3/api-docs
   swagger-ui:
     enabled: true
     path: /swagger-ui.html
+    operationsSorter: alpha
+    display-request-duration: true
 
 ---
 spring:

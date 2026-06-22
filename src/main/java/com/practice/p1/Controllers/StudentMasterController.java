@@ -21,7 +21,7 @@ import com.practice.p1.Services.StudentMasterServices;
 
 @RestController
 @ResponseBody
-@RequestMapping("/api/")
+@RequestMapping("/api/v1/")
 public class StudentMasterController {
     @Autowired
     StudentMasterServices st;
