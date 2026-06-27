@@ -26,6 +26,16 @@ public class StudentMaster {
 
     @Column(name = "student_no")
     Long studentNo;
+
+    @Column(name = "studmob_no")
+    String studMobNo;
+
+    @Column(name = "stud_emailId")
+    String studEmail;
+
+    @Column(name = "stud_age")
+    int age;
+
     @ManyToOne(fetch = FetchType.EAGER) //When student load it will load class
     @JoinColumn(name="std_class_id")
     StudentClass studClass;

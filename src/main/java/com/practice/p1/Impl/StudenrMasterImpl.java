@@ -16,6 +16,7 @@ import com.practice.p1.Repo.SubjectMasterRepo;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -44,7 +45,7 @@ public class StudenrMasterImpl implements StudentMasterServices   {
         // TODO Auto-generated method stub
         return stRepo.findAll();
     }
-
+    @Transactional
     @Override
     public StudentMaster saveData(StudentMasterDTO ob) {
         StudentMaster st = new StudentMaster();        

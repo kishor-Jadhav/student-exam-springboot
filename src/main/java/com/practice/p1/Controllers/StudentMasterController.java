@@ -9,6 +9,7 @@ import com.practice.p1.DTO.Responce.StudentExamMarksPaginationListDTO;
 import com.practice.p1.DTO.Responce.StudentExamSearchResponseDTO;
 import com.practice.p1.DTO.Responce.SubjectwiseMarksResponseDTO;
 import com.practice.p1.DTO.Search.StudentExamSearchDTO;
+import com.practice.p1.DTO.Validation.StudentMasterValidationDTO;
 import com.practice.p1.Entity.StudentExamMarks;
 import com.practice.p1.Interface.StudentInfoView;
 import org.hibernate.annotations.Parameter;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 
 import com.practice.p1.Entity.StudentMaster;
 import com.practice.p1.Services.StudentMasterServices;
+
+import jakarta.validation.Valid;
 
 
 @RestController
@@ -109,6 +112,12 @@ public class StudentMasterController {
             @RequestBody StudentExamSearchDTO dto){
 
         return st.getSubjectWiseMarkx(dto);
+    }
+
+    @PostMapping("/dtovalidation")
+    public StudentMasterValidationDTO dtoValidation(@Valid  @RequestBody StudentMasterValidationDTO dto){
+
+        return dto;
     }
     
 }

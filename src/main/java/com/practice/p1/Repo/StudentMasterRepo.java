@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.practice.p1.DTO.StudentInfoJPQL;
 import com.practice.p1.Entity.ClassSubjectMaster;
+import com.practice.p1.Entity.StudentClass;
 import com.practice.p1.Entity.StudentExamMarks;
 import com.practice.p1.Interface.StudentInfoView;
 import org.hibernate.annotations.Parameter;
@@ -51,5 +52,8 @@ public interface StudentMasterRepo extends JpaRepository<StudentMaster,Long> {
  @Query("Select sem from StudentExamMarks sem join ExamMaster em on sem.examDetails.examId=em.examId")
  Page<StudentExamMarks> getAllExamMarksPagination(Pageable pageable);
 
-
+// //For Batch
+// @Query("Select s from StudentMaster s where s.StudentClass.studClassName: = clssNo and s.studentName: =studentName and s.studEmail: = studEmail ")
+// List<StudentMaster> findByStudentNameAndStudEmailAndStudClass(@Param("studentName") String studentName,@Param("studEmail") String studEmail,@Param("clssNo") String clssNo);
+Boolean existsByStudentNameAndStudEmailAndStudClass_studClassName(String s, String e, String cl);
 }

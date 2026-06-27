@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ml_student_analysis
+    username: root
+    password: root
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+batch:
+  input:
+    folder: D:/batch/input
+
+  archive:
+    folder: D:/batch/archive
+
+  error:
+    folder: D:/batch/error
